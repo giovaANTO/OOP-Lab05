@@ -1,10 +1,17 @@
 package it.unibo.oop.lab05.ex2;
 
+import java.util.Random;
+import java.util.Set;
+import java.util.TreeSet;
+
 /**
  * 
  */
 public final class UseSetWithOrder {
 
+	private final static int INSERTION_LIMIT = 10000;
+	
+	
     private UseSetWithOrder() {
     }
 
@@ -24,5 +31,15 @@ public final class UseSetWithOrder {
          * 
          * 3) Prints the set, which must be ordered
          */
+    	final Set<String> stringSet = new TreeSet<>(new CustomComparator());
+    	Random random  = new Random();
+    	for (int i = 0; i < INSERTION_LIMIT; i++) {
+			stringSet.add(String.valueOf(random.nextInt(INSERTION_LIMIT)));
+		}
+    	
+    	
+    	System.out.println(stringSet);
+    	
+    	
     }
 }
